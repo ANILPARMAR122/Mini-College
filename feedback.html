@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="feedback.css">
+  <title>O2 Solutions | Feedback</title>
+  <style>
+  
+  </style> 
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <div class="nav__logo"><span>O2</span> Solutions</div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="services.html">Services</a></li>
+        <li class="link"><a href="contactUs.html">Contact</a></li>
+        <li class="link"><a href="feedback.html">feedback</a></li>
+        <li class="link"><a href="aboutUs.html">About Us</a></li>
+      </ul>
+      <button class="btn">Register Now</button>
+    </nav>
+
+    <div class="feedback-container">
+      <h2>Share Your Experience</h2>
+      <p class="subtitle">We value your feedback to improve our services</p>
+      
+      <form class="feedback-form" id="feedbackForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Service Rating</label>
+          <div class="rating-container">
+            <i class="ri-star-fill rating-star" data-rating="1"></i>
+            <i class="ri-star-fill rating-star" data-rating="2"></i>
+            <i class="ri-star-fill rating-star" data-rating="3"></i>
+            <i class="ri-star-fill rating-star" data-rating="4"></i>
+            <i class="ri-star-fill rating-star" data-rating="5"></i>
+          </div>
+          <input type="hidden" id="rating" name="rating" required>
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Your Feedback</label>
+          <textarea id="comments" name="comments" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn submit-btn">Submit Feedback</button>
+      </form>
+
+      <div class="thank-you-message" id="thankYouMessage">
+        <h3>Thank You for Your Feedback!</h3>
+        <p>We appreciate you taking the time to help us improve our services.</p>
+        <i class="ri-checkbox-circle-fill" style="font-size: 3rem; color: #4CAF50;"></i>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h4>Product</h4>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Documentation</a>
+            <a href="#">Release Notes</a>
+        </div>
+        <div class="footer-column">
+            <h4>Re-direct</h4>
+            <a href="#">About Us</a>
+            <a href="#">feedback</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Home</a>
+        </div>
+        <div class="social-links">
+            <h4>Follow Us</h4>
+            <a href="#"><i class="ri-facebook-fill"></i>facebook</a>
+            <a href="#"><i class="ri-twitter-fill"></i>twitter</a>
+            <a href="#"><i class="ri-instagram-fill"></i>instagram</a>
+            <a href="#"><i class="ri-linkedin-fill"></i>linkedin</a>
+        </div>
+    </div>
+</footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const stars = document.querySelectorAll('.rating-star');
+      const ratingInput = document.getElementById('rating');
+      const form = document.getElementById('feedbackForm');
+      const thankYouMessage = document.getElementById('thankYouMessage');
+
+      // Star rating interaction
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          const rating = star.dataset.rating;
+          ratingInput.value = rating;
+          
+          stars.forEach((s, index) => {
+            s.style.color = index < rating ? '#ffd700' : '#e0e0e0';
+          });
+        });
+      });
+
+      // Form submission
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        if (validateForm()) {
+          // Simulate form submission
+          form.reset();
+          stars.forEach(star => star.style.color = '#e0e0e0');
+          thankYouMessage.classList.add('show');
+          
+          setTimeout(() => {
+            thankYouMessage.classList.remove('show');
+          }, 5000);
+        }
+      });
+
+      function validateForm() {
+        if (!ratingInput.value) {
+          alert('Please provide a rating');
+          return false;
+        }
+        return true;
+      }
+    });
+  </script>
+
+</body>
+</html>

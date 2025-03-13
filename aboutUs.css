@@ -1,0 +1,286 @@
+/* General Styles */
+body {
+    font-family: bebas neue, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: #ffffff;
+    color: #fff;
+    padding: 0; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.active{
+    font-weight: 200;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 520;
+}
+
+
+.black{
+     color: rgba(0, 0, 0, 0.729);;
+}
+.orange{
+    color: #28bf96;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.about-content {
+    flex: 1;
+    margin-right: 40px;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.about-content button {
+    background: #28bf96;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.about-content button:hover {
+    background: #28bf96;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.why-choose-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #28bf96;
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #28bf96;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card i {
+    font-size: 40px;
+    color: #28bf96;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .feature-card i {
+        font-size: 32px;
+    }
+
+    .feature-card h3 {
+        font-size: 20px;
+    }
+}
+
+/* Team Section */
+.team-section {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 40px;
+    margin-top: 60px;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-column {
+    min-width: 200px;
+  }
+  
+  .footer-column h4 {
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  .footer-column a {
+    display: block;
+    color: #888;
+    text-decoration: none;
+    margin: 8px 0;
+  }
